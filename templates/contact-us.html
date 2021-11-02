@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="header-bottom header-bottom__mainblock">
+        <div class="header-bottom__container container">
+            <h1 class="mainblock__title">
+                О нас
+            </h1>
+            <div class="mainblock__subtitle">
+                Свяжитесь с нами
+            </div>
+        </div>
+        <div class="header-bottom__image ibg">
+            <img src="{% static 'img/contact-us/01.jpg' %}" alt="">
+        </div>
+    </div>
+    {#    <main>#}
+    {#        <section class="breadcrumb">#}
+    {#            <div class="breadcrumb__container container">#}
+    {#                    <span class="breadcrumb__item">#}
+    {#                        <a href="" class="breadcrumb__link">Главная</a>#}
+    {#                    </span>#}
+    {#                <span class="breadcrumb__item">#}
+    {#                        <span class="breadcrumb__title">О нас</span>#}
+    {#                    </span>#}
+    {#            </div>#}
+    {#        </section>#}
+    {#        <section class="contact-us">#}
+    {#            <div class="contact-us__container container">#}
+    {#                <div class="contact-us__row">#}
+    {#                    <div class="contact-us__column">#}
+    {#                        <div class="contact-us__title section-title">#}
+    {#                            <h2 class="section-title__title">Свяжитесь с нами</h2>#}
+    {#                            <span class="section-title__line"></span>#}
+    {#                        </div>#}
+    {#                        <p class="contact-us__text">#}
+    {#                            Позвоните на наш номер чтобы поговорить с нашими высококлассными менеджерами. Также звоните#}
+    {#                            если у вас есть какие либо вопросы#}
+    {#                        </p>#}
+    {#                        <h4>Звоните на номер: <a href="tel:+998979270454">+998979270454</a></h4>#}
+    {#                    </div>#}
+    {#                    <div class="contact-us__column map">#}
+    {#                        <div class="map__row">#}
+    {#                            <div class="map__column">#}
+    {#                                <h4 class="map__title">#}
+    {#                                    Наш адресс#}
+    {#                                </h4>#}
+    {#                                <p class="map__text">#}
+    {#                                  Гулобов массив, Самаркандский район#}
+    {#                                </p>#}
+    {#                            </div>#}
+    {#                            <div class="map__column">#}
+    {#                                <h4 class="map__title">#}
+    {#                                   Контактная информация#}
+    {#                                </h4>#}
+    {#                                <p class="map__text">#}
+    {#                                    +998979270454#}
+    {#                                    <br>#}
+    {#                                    <a href="#" class="map__link">tolibo@gmail.com</a>#}
+    {#                                </p>#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                        <div class="google-maps">#}
+    {#                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2372.191530540092!2d49.30698741528919!3d53.518636169493895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x416879e0266e1f4d%3A0xc8a11ac723085210!2z0KDQtdGB0YLQvtGA0LDQvSDCq0dhY2hpIE11Y2hpwrs!5e0!3m2!1sru!2s!4v1635559032417!5m2!1sru!2s"#}
+    {#                                    width="100%" height="400" style="border:0;" allowfullscreen=""#}
+    {#                                    loading="lazy"></iframe>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </section>#}
+    {#    </main>#}
+    <main>
+        <section class="breadcrumb">
+            <div class="breadcrumb__container container">
+                    <span class="breadcrumb__item">
+                        <a href="" class="breadcrumb__link">Главная</a>
+                    </span>
+                <span class="breadcrumb__item">
+                        <span class="breadcrumb__title">Контакты</span>
+                    </span>
+            </div>
+        </section>
+        <section class="contact-us">
+            <div class="contact-us__container container">
+                <div class="contact-us__row">
+                    <div class="contact-us__column">
+                        <div class="contact-us__title section-title">
+                            <h2 class="section-title__title">Позвоните нам !</h2>
+                            <span class="section-title__line"></span>
+                        </div>
+                        <a href="tel:+998979270454" class="contact-us__phone">
+                            +998 97 927 04 54
+                        </a>
+                        <p class="contact-us__text">
+                            Свяжитесь с нами если у вас возникли какие либо вопросы.
+                            Мы быстроразвивающаяся строительная компания. В первую очередь наша задача это
+                            высококачественные услуги, хороший сервис и довольные клиенты. Наши заказчики никогда не
+                            пишут нам плохих отзывов потому что мы выполняем нашу работу на все 100 всегда ! Мы всегда
+                            рады выслушать своих клиентов их пожелания и все что они хотят.
+                            Так что же вы тяните ?
+                            <br><strong>Мы ждем вашего звонка !</strong>
+                        </p>
+                        <!-- <form action="" class="form-contact">
+                            <div class="form-contact__body">
+                                <div class="form-contact__row">
+                                    <div class="form-contact__column">
+                                        <div class="form-contact__input">
+                                            <input type="text" placeholder="First Name *" autocomplete="off" name="form[]" data-value="" class="input req">
+                                        </div>
+                                    </div>
+                                    <div class="form-contact__column">
+                                        <div class="form-contact__input">
+                                            <input type="text" placeholder="Last Name *" autocomplete="off" name="form[]" data-value="" class="input req">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-contact__row">
+                                    <div class="form-contact__column">
+                                        <div class="form-contact__input">
+                                            <input type="text" placeholder="Your Email *" autocomplete="off" name="form[]" data-value="" class="input req email">
+                                        </div>
+                                    </div>
+                                    <div class="form-contact__column">
+                                        <div class="form-contact__input">
+                                            <input type="text" placeholder="Your Phone Number *" autocomplete="off" name="form[]" data-value="" class="input req">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-contact__input">
+                                    <input type="text" placeholder="Subject" autocomplete="off" name="form[]" data-value="" class="input req">
+                                </div>
+                                <div class="form-contact__input">
+                                    <textarea aria-invalid="false" cols="40" rows="10" placeholder="Message" class="input req"></textarea>
+                                </div>
+                                <button class="form-contact__btn" type="submit">Send Message</button>
+                            </div>
+                        </form> -->
+                    </div>
+                    <div class="contact-us__column map">
+                        <div class="map__row">
+                            <div class="map__column">
+                                <h4 class="map__title">
+                                    Наш адресс
+                                </h4>
+                                <p class="map__text">
+                                    Гулобов массив, Самаркандский район
+                                </p>
+                            </div>
+                            <div class="map__column">
+                                <h4 class="map__title">
+                                    Контактная информация
+                                </h4>
+                                <p class="map__text">
+                                    +998979270454
+                                    <br>
+                                    <a href="#" class="map__link">tolibo@construction.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- <div class="google-maps">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.6226873741293!2d-122.08637698533921!3d37.42239224012896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba027f087f8f%3A0xd86b06710e8fcc35!2sGoogle%20Building%2040%2C%201600%20Amphitheatre%20Pkwy%2C%20Mountain%20View%2C%20CA%2094043%2C%20%D0%A1%D0%A8%D0%90!5e0!3m2!1sru!2s!4v1635864270904!5m2!1sru!2s" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

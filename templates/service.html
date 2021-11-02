@@ -1,0 +1,251 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="mainblock mainblock__service">
+        <!-- <div class="mainblock__content"> -->
+        <div class="mainblock__container container">
+            <h1 class="mainblock__title">
+                Услуги
+            </h1>
+            <div class="mainblock__subtitle">
+                На наших проектах работают только специалисты высшего качества
+            </div>
+        </div>
+        <!-- </div> -->
+        <div class="mainblock__image ibg">
+            <img src="{% static 'img/swiper/03.jpg' %}" alt="">
+        </div>
+        <div class="mainblock__overlay"></div>
+    </div>
+    <main>
+        <section class="breadcrumb">
+            <div class="breadcrumb__container container">
+                    <span class="breadcrumb__item">
+                        <a href="" class="breadcrumb__link">Главная</a>
+                    </span>
+
+                <span class="breadcrumb__item">
+                        <span class="breadcrumb__title">Услуги</span>
+                    </span>
+            </div>
+        </section>
+        <section class="content-wrap">
+            <div class="content-wrap__container container">
+                <div class="content-wrap__row">
+                    <aside class="content-wrap__sidebar sidebar">
+                        <div class="sidebar-service">
+                            <h4 class="sidebar-service__title sidebar__title">Услуги</h4>
+                            <ul class="sidebar-service__menu">
+                                {#                                <li>#}
+                                {#                                    <a href="" class="sidebar-service__link">All Services</a>#}
+                                {#                                </li>#}
+                                {% for service in services %}
+                                    <li>
+                                        <a href="?service_id={{ service.id }}"
+                                           class="sidebar-service__link">{{ service.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {#                        <div class="sidebar-downloads">#}
+                        {#                            <h4 class="sidebar-downloads__title sidebar__title">Download Brochures</h4>#}
+                        {#                            <div class="sidebar-downloads__download">#}
+                        {#                                <a href="" class="btn-file _icon-file-pdf">#}
+                        {#                                    <span>HOME-REMODELING.PDF</span>#}
+                        {#                                </a>#}
+                        {#                            </div>#}
+                        {#                            <div class="sidebar-downloads__download">#}
+                        {#                                <a href="" class="btn-file _icon-file-pdf">#}
+                        {#                                    <span>HARDWOOD-FLOORING.DOC</span>#}
+                        {#                                </a>#}
+                        {#                            </div>#}
+                        {#                            <div class="sidebar-downloads__download">#}
+                        {#                                <a href="" class="btn-file _icon-file-pdf">#}
+                        {#                                    <span>ROOFING-CONTRACTOR.PPT</span>#}
+                        {#                                </a>#}
+                        {#                            </div>#}
+                        {#                        </div>#}
+                        <div class="sidebar-office">
+                            <h4 class="sidebar-office__title sidebar__title">Наш офис</h4>
+                            <div class="sidebar-office__info">
+                                <div class="sidebar-office__item">
+                                    <div class="sidebar-office__icon _icon-map-marker"></div>
+                                    <div class="sidebar-office__value">
+                                        Гулобов массив, Самаркандский район
+
+                                    </div>
+                                </div>
+                                <div class="sidebar-office__item">
+                                    <div class="sidebar-office__icon _icon-phone"></div>
+                                    <div class="sidebar-office__value">
+                                        +998979270454
+                                    </div>
+                                </div>
+                                <div class="sidebar-office__item">
+                                    <div class="sidebar-office__icon _icon-mail"></div>
+                                    <div class="sidebar-office__value">
+                                        <a href="tel:chicago@construction.com" class="sidebar-office__link">
+                                            tolibo@construction.com
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="content-wrap__content main">
+                        <div class="main__image">
+                            <img src="
+                                    {% if service %}{{ service.photo.url }}{% else %}{% static 'img/swiper/03.jpg' %}{% endif %}"
+                                 alt="">
+                        </div>
+                        {#                        <div class="baguette gallery">#}
+                        {#                            <!-- <div class="baguette__row"> -->#}
+                        {#                            <a href="./img/mainblock/s03.jpg" class="baguette__image">#}
+                        {#                                <img src="./img/mainblock/s03.jpg" alt="">#}
+                        {#                            </a>#}
+                        {#                            <a href="./img/mainblock/s03.jpg" class="baguette__image">#}
+                        {#                                <img src="./img/mainblock/s03.jpg" alt="">#}
+                        {#                            </a>#}
+                        {#                            <a href="./img/mainblock/s03.jpg" class="baguette__image">#}
+                        {#                                <img src="./img/mainblock/s03.jpg" alt="">#}
+                        {#                            </a>#}
+                        {#                            <a href="./img/mainblock/s03.jpg" class="baguette__image">#}
+                        {#                                <img src="./img/mainblock/s03.jpg" alt="">#}
+                        {#                            </a>#}
+                        {#                            <a href="./img/mainblock/s03.jpg" class="baguette__image">#}
+                        {#                                <img src="./img/mainblock/s03.jpg" alt="">#}
+                        {#                            </a>#}
+                        {#                            <!-- </div> -->#}
+                        {#                        </div>#}
+                        <div class="main-posts">
+                            <div class="main-posts__row">
+                                <div class="main-posts__column" style="width: 100%">
+                                    {% if service %}
+                                        <h4 class="main-posts__title">{{ service.title }}</h4>
+                                        <p class="main-posts__text">{{ service.description }}</p>
+                                        <p class="main-posts__title">Телефон: {{ service.phone }}</p>
+                                    {% else %}
+                                        <h4 class="main-posts__title">Пожалуйста выберите услугу чтобы узнать о ней больше.</h4>
+                                    {% endif %}
+                                </div>
+                                {#                                <div class="main-posts__column">#}
+                                {#                                    <h4 class="main-posts__title">Project Management</h4>#}
+                                {#                                    <p class="main-posts__text">We will assign a project manager, field superintendent,#}
+                                {#                                        engineer and other staff members as required to effectively manage the#}
+                                {#                                        construction#}
+                                {#                                        process. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue,#}
+                                {#                                        eu#}
+                                {#                                        vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,#}
+                                {#                                        accumsan porttitor, facilisis luctus, metus.</p>#}
+                                {#                                </div>#}
+                                {#                                <div class="main-posts__column">#}
+                                {#                                    <h4 class="main-posts__title">Project Management</h4>#}
+                                {#                                    <p class="main-posts__text">We will assign a project manager, field superintendent,#}
+                                {#                                        engineer and other staff members as required to effectively manage the#}
+                                {#                                        construction#}
+                                {#                                        process. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue,#}
+                                {#                                        eu#}
+                                {#                                        vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,#}
+                                {#                                        accumsan porttitor, facilisis luctus, metus.</p>#}
+                                {#                                </div>#}
+                                {#                                <div class="main-posts__column">#}
+                                {#                                    <h4 class="main-posts__title">Project Management</h4>#}
+                                {#                                    <p class="main-posts__text">We will assign a project manager, field superintendent,#}
+                                {#                                        engineer and other staff members as required to effectively manage the#}
+                                {#                                        construction#}
+                                {#                                        process. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue,#}
+                                {#                                        eu#}
+                                {#                                        vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,#}
+                                {#                                        accumsan porttitor, facilisis luctus, metus.</p>#}
+                                {#                                </div>#}
+                            </div>
+                        </div>
+                        {#                        <div class="main-brochure">#}
+                        {#                            <div class="main-brochure__row">#}
+                        {#                                <div class="main-brochure__column">#}
+                        {#                                    <div class="main-spoiler one">#}
+                        {#                                        <div class="main-spoiler__item">#}
+                        {#                                            <div class="main-spoiler__title">ADDITION CONSTRUCTION STEPS</div>#}
+                        {#                                            <div class="main-spoiler__text">#}
+                        {#                                                We will work with all project team members to define the logistical#}
+                        {#                                                requirements for the construction process, such as areas for deliveries,#}
+                        {#                                                placement of barricades (if required) and hours of operation. Donec#}
+                        {#                                                odio.#}
+                        {#                                                Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.#}
+                        {#                                                Suspendisse#}
+                        {#                                                urna nibh, viverra non, semper suscipit, posuere a, pede.#}
+                        {#                                            </div>#}
+                        {#                                        </div>#}
+                        {#                                        <div class="main-spoiler__item">#}
+                        {#                                            <div class="main-spoiler__title">ADDITION CONSTRUCTION STEPS</div>#}
+                        {#                                            <div class="main-spoiler__text">#}
+                        {#                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,#}
+                        {#                                                explicabo#}
+                        {#                                                quisquam ipsum autem iusto, assumenda harum, eaque doloremque obcaecati#}
+                        {#                                                saepe commodi dolorem nemo aliquid quas veniam. Maiores saepe et, ab#}
+                        {#                                                unde#}
+                        {#                                                voluptates molestiae ut praesentium officiis distinctio, eos#}
+                        {#                                                reprehenderit#}
+                        {#                                                dicta! Quod nesciunt deleniti tempora numquam quidem nemo laborum fuga#}
+                        {#                                                aperiam.#}
+                        {#                                            </div>#}
+                        {#                                        </div>#}
+                        {#                                        <div class="main-spoiler__item">#}
+                        {#                                            <div class="main-spoiler__title">ADDITION CONSTRUCTION STEPS</div>#}
+                        {#                                            <div class="main-spoiler__text">#}
+                        {#                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,#}
+                        {#                                                explicabo#}
+                        {#                                                quisquam ipsum autem iusto, assumenda harum, eaque doloremque obcaecati#}
+                        {#                                                saepe commodi dolorem nemo aliquid quas veniam. Maiores saepe et, ab#}
+                        {#                                                unde#}
+                        {#                                                voluptates molestiae ut praesentium officiis distinctio, eos#}
+                        {#                                                reprehenderit#}
+                        {#                                                dicta! Quod nesciunt deleniti tempora numquam quidem nemo laborum fuga#}
+                        {#                                                aperiam.#}
+                        {#                                            </div>#}
+                        {#                                        </div>#}
+                        {#                                        <div class="main-spoiler__item">#}
+                        {#                                            <div class="main-spoiler__title">ADDITION CONSTRUCTION STEPS</div>#}
+                        {#                                            <div class="main-spoiler__text">#}
+                        {#                                                We will work with all project team members to define the logistical#}
+                        {#                                                requirements for the construction process, such as areas for deliveries,#}
+                        {#                                                placement of barricades (if required) and hours of operation. Donec#}
+                        {#                                                odio.#}
+                        {#                                                Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.#}
+                        {#                                                Suspendisse#}
+                        {#                                                urna nibh, viverra non, semper suscipit, posuere a, pede.#}
+                        {#                                            </div>#}
+                        {#                                        </div>#}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {#                                <div class="main-brochure__column">#}
+                        {#                                    <h4 class="main-brochure__title">#}
+                        {#                                        Service Brochure#}
+                        {#                                    </h4>#}
+                        {#                                    <div class="main-brochure__image">#}
+                        {#                                        <img src="./img/service/01.jpg" alt="">#}
+                        {#                                    </div>#}
+                        {#                                    <p class="main-brochure__text">#}
+                        {#                                        An overview of our construction services from Construction Management,#}
+                        {#                                        Design-build,#}
+                        {#                                        General Contracting to Small Jobs and Service Work#}
+                        {#                                    </p>#}
+                        {#                                    <div class="main-brochure__download">#}
+                        {#                                        <a href="" class="btn-file _icon-file-pdf">#}
+                        {#                                            <span> SERVICE-BROCHURE.PDF</span>#}
+                        {#                                        </a>#}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {#                            </div>#}
+                        {#                        </div>#}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+{% block extra_js %}
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
+
+
